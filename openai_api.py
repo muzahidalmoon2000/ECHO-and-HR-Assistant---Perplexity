@@ -76,7 +76,7 @@ def detect_intent_and_extract_pplx(user_input):
         "- HR_Admin: For queries about HR policies, leave, NID, ID numbers, benefits, holidays, onboarding, payroll, work schedule, HR rules, or employee matters.\n"
         "- file_search: If the user is clearly asking to search, find, retrieve, preview, or get a specific document or file (e.g., 'valuation report', 'pike 2023 financials', 'supernova deck').\n"
         "- file_search_prompt: If the user gives a vague phrase like 'I need a file', 'I'm looking for something', 'Can you help me find a document?', without specifying what.\n"
-        "- general_response: For greetings, chitchat, jokes, thank you, or unrelated input.\n\n"
+        "- general_response: For greetings, chitchat, jokes, thank you,recent news, news, or unrelated input.\n\n"
         "Respond strictly in this JSON format:\n"
         "{\"intent\": \"intent_name\", \"data\": \"cleaned relevant keyword(s) or query\"}\n\n"
         "Examples:\n"
@@ -131,6 +131,7 @@ def answer_with_chat_style(user_input):
             "You are ChatGPT, an intelligent assistant that can answer general world knowledge, "
             "recent events, news-style questions, and everyday queries. "
             "Even if some events are recent, do your best to provide an informed response."
+            " Do not include source reference numbers like [1], [2], etc. in your response."
         )
         return perplexity_chat(user_input, system_prompt=system_prompt, temperature=0.7)
     except Exception as e:

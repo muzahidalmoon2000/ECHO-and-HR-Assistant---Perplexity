@@ -307,7 +307,7 @@ def chat():
     # ✅ Initial greeting
     if session.get("stage") == "start":
         session["stage"] = "awaiting_query"
-        msg = "Hi there! 👋 What file are you looking for today?"
+        msg = "Hi there! 👋 how can I help you today!"
         save_message(user_email, chat_id, ai_response=msg)
         return jsonify(response=msg, intent="greeting")
 

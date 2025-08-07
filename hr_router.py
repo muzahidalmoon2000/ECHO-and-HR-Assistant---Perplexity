@@ -20,7 +20,7 @@ def call_perplexity_chat(system_prompt, user_input, temperature=0.2):
     }
 
     data = {
-        "model": "sonar-reasoning-pro",
+        "model": "sonar-pro",
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_input}

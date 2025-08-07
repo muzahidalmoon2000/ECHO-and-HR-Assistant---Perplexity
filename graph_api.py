@@ -168,6 +168,7 @@ def search_all_files(token, query,original_query=None):
             f["extracted_text"] = f"{f['name']} {f.get('webUrl', '')}"
     print(f"Total Files Found: {len(all_results)}")
     print("🤖 [3] Ranking files with Perplexity...")
+    all_results = all_results[:20]  # Limit to top 100 for ranking
     ranked_files = rank_files_with_perplexity(query, all_results, original_query=original_query)
 
     total_time = time.time() - overall_start
