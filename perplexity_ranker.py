@@ -16,7 +16,7 @@ def rank_files_with_perplexity(query, files, original_query=None):
 
     # Construct text summary for Perplexity input
     file_descriptions = "\n".join(
-        f"{i+1}. {f['name']}\n{f.get('extracted_text', '')[:300]}"
+        f"{i+1}. {f['name']}\n{f.get('extracted_text', '')[:1000]}"
         for i, f in enumerate(files)
     )
 
