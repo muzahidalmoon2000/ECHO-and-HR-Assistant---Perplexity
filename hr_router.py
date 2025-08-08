@@ -42,6 +42,7 @@ def classify_intent(user_query):
         "- 'leave_policy': Leave rules or company policy on leave/holidays\n"
         "- 'hr_admin': Any other HR document-based request\n"
         "- 'general': Anything else not HR related\n\n"
+        "- 'Do not include source reference numbers like [1], [2], etc. in your response.\n\n"
         "Reply in this JSON format: {\"intent\": \"intent_name\"}"
     )
     response = call_perplexity_chat(system_prompt, user_query, temperature=0)
