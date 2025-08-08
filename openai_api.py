@@ -90,6 +90,7 @@ def detect_intent_and_extract_pplx(user_input):
         "- Classify vague inputs (e.g., 'I need a document', 'show me a file', 'I'm looking for something') as 'file_search_prompt'.\n"
         "- Do NOT classify inputs as 'file_search' if they only mention 'file', 'document', etc. without a topic or description.\n"
         "- Remove suffix words like 'file', 'document','excel', 'sheet','list','pdf','docx','txt' from the extracted data.\n"
+        "- Remove perffix words like 'most recent', 'recent' from the extracted data.\n"
         "- Classify questions like '2023 pike valuation', 'Q4 deck', 'supernova update', 'board report' as file_search.\n"
         "- Output must be strict valid JSON with no extra commentary.\n\n"
         f"User input:\n{user_input}"
